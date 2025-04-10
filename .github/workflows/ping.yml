@@ -1,9 +1,9 @@
 name: Keep Supabase Awake
 
 on:
-  workflow_dispatch: # 👈 This enables manual runs from the GitHub UI
+  workflow_dispatch:
   schedule:
-    - cron: '0 10 * * 1' # Every Monday at 10:00 AM UTC
+    - cron: '0 10 * * 1'
 
 jobs:
   ping:
@@ -11,5 +11,5 @@ jobs:
     steps:
       - name: Ping Supabase
         run: |
-          curl https://poztldedwyauugwyahdb.supabase.co/rest/v1/todos \
+          curl https://poztldedwyauugwyahdb.supabase.co/rest/v1/users \
             -H "apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBvenRsZGVkd3lhdXVnd3lhaGRiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE5NDk1MTQsImV4cCI6MjA1NzUyNTUxNH0.BwUpRkcIap2JOb1ydoLlfyImhTJY63OcO-R_iYMpiU4"
