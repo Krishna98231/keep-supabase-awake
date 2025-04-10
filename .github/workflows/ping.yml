@@ -1,0 +1,14 @@
+name: Keep Supabase Awake
+
+on:
+  schedule:
+    - cron: '0 10 * * 1' # Every Monday at 10:00 AM UTC
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase
+        run: |
+          curl https://poztldedwyauugwyahdb.supabase.co/rest/v1/todos \
+            -H "apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBvenRsZGVkd3lhdXVnd3lhaGRiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDE5NDk1MTQsImV4cCI6MjA1NzUyNTUxNH0.BwUpRkcIap2JOb1ydoLlfyImhTJY63OcO-R_iYMpiU4"
